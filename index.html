@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sudoku Sensei</title>
+<meta name="description" content="Help and contact for Sudoku Sensei, a sudoku game for iPhone and iPad. Each hint names the technique it uses and explains why the move works.">
+<meta name="color-scheme" content="light dark">
+<style>
+  :root {
+    --bg: #F6F2E9; --card: #FFFDF7; --ink: #1E2230; --soft: #5E5A50; --line: #C9C2B2; --box: #5B5646; --accent: #2F5D8A;
+    --serif: "New York", ui-serif, "Iowan Old Style", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #14161B; --card: #1D2027; --ink: #E7E4DD; --soft: #A9ADB8; --line: #3A3E48; --box: #8A8E99; --accent: #7AA7D9; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--sans); }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 20px 64px; }
+  header { text-align: center; margin-bottom: 36px; }
+  .mark { width: 44px; height: 44px; display: block; margin: 0 auto 18px; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+  h1 { font-size: clamp(32px, 7vw, 44px); margin: 0 0 6px; letter-spacing: -0.01em; }
+  .tagline { color: var(--soft); margin: 0; font-size: 18px; }
+  h2 { font-size: 24px; margin: 0 0 12px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px 22px 8px; margin: 22px 0; }
+  ul.features { list-style: none; padding: 0; margin: 0 0 14px; }
+  ul.features li { padding: 10px 0 10px 28px; border-top: 1px solid var(--line); position: relative; }
+  ul.features li:first-child { border-top: 0; }
+  ul.features li::before { content: ""; position: absolute; left: 4px; top: 19px; width: 10px; height: 10px; border-radius: 2px; background: var(--accent); }
+  details { border-top: 1px solid var(--line); padding: 12px 0; }
+  details:first-of-type { border-top: 0; }
+  summary { cursor: pointer; font-weight: 600; list-style: none; padding-right: 24px; position: relative; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 2px; top: -2px; color: var(--accent); font-size: 22px; font-weight: 400; }
+  details[open] summary::after { content: "\2013"; }
+  details p, details ol, details ul { margin: 10px 0 6px; color: var(--ink); }
+  details ol, details ul { padding-left: 22px; }
+  .contact { font-size: 18px; }
+  footer { text-align: center; color: var(--soft); font-size: 15px; margin-top: 36px; }
+  footer a { margin: 0 6px; }
+  @media (max-width: 420px) { .card { padding: 18px 16px 6px; } body { font-size: 16px; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+      <rect x="1" y="1" width="42" height="42" rx="4" style="fill:var(--card);stroke:var(--box);stroke-width:2"/>
+      <path d="M15 1v42M29 1v42M1 15h42M1 29h42" style="stroke:var(--line);stroke-width:1.5;fill:none"/>
+      <rect x="17" y="17" width="10" height="10" rx="1.5" style="fill:var(--accent)"/>
+    </svg>
+    <h1>Sudoku Sensei</h1>
+    <p class="tagline">Sudoku for iPhone and iPad. Every hint tells you which technique it's using and why.</p>
+  </header>
+
+  <p>When you ask for a hint, Sudoku Sensei highlights the cells involved and names the technique. Tap <strong>Why?</strong> to see the reasoning. <strong>Apply</strong> places the digit for you, or you can close the hint and do it yourself. If mistake checking is on, a wrong digit gets a short note under the board saying what's wrong with it, such as "Row 4 already has a 6."</p>
+
+  <div class="card">
+    <h2>In the app</h2>
+    <ul class="features">
+      <li>A Learn section with ten techniques: naked and hidden singles, naked and hidden pairs, pointing, box-line reduction, naked triples, X-wing, XY-wing and swordfish. Each one has a worked example. The ring next to a technique fills up as you use it on your own, without a hint, and five uses counts as mastered. Pro adds drills, puzzles set up so that the next step needs that technique.</li>
+      <li>A new puzzle every day. Days you solve get a tick on the calendar, and a month with no gaps gets a trophy.</li>
+      <li>Five levels, Beginner to Expert. Every Expert puzzle needs an XY-wing or a swordfish somewhere.</li>
+      <li>Notes, and undo as far back as you like.</li>
+      <li>Zen mode hides the timer and the mistake count. You can also turn off just the timer.</li>
+      <li>Light, dark, sepia and high-contrast themes. Three text sizes. A left-handed option that flips the order of the buttons under the board.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Support</h2>
+    <p class="contact">For support, <a href="https://github.com/aibrahim11/sudoku-sensei/issues">open an issue on GitHub</a>. It's just me, so a reply can take a day or two. Please do not include personal information in a public issue.</p>
+    <p>If something's broken, tell me which device you're on, your iOS version and the app version. The app version is at the bottom of the app's Settings screen.</p>
+  </div>
+
+  <div class="card">
+    <h2>Questions</h2>
+
+    <details>
+      <summary>How many hints do I get for free?</summary>
+      <p>Three a day, reset at midnight your time. Watching a video ad gets you one more, up to three extra a day. With Pro there's no limit.</p>
+      <p>If there's a wrong digit on the board, a hint points that out first. That one doesn't count.</p>
+    </details>
+
+    <details>
+      <summary>What does Pro include?</summary>
+      <p>No ads, unlimited hints, the technique drills, the daily archive (every past daily puzzle), your full stats history, and four extra accent colours. You can pay yearly, with a 7-day free trial first, or monthly, or once for lifetime access. Family Sharing works with all three.</p>
+      <p>All five levels are free to play. If you pick Expert you may see the Pro screen first; close it and the game starts.</p>
+    </details>
+
+    <details>
+      <summary>How do I restore my purchases?</summary>
+      <ol>
+        <li>Check that you're signed in with the Apple Account you bought Pro with.</li>
+        <li>In Sudoku Sensei, open Settings (the gear on the home screen) and tap <strong>Restore Purchases</strong>. The Pro screen has a Restore button as well.</li>
+      </ol>
+      <p>Pro then works on any iPhone or iPad signed in to that Apple Account, and for people in your Family Sharing group.</p>
+    </details>
+
+    <details>
+      <summary>How do I cancel a subscription?</summary>
+      <ol>
+        <li>Open the <strong>Settings</strong> app on your iPhone or iPad.</li>
+        <li>Tap your name, then <strong>Subscriptions</strong>.</li>
+        <li>Tap <strong>Sudoku Sensei</strong>, then <strong>Cancel Subscription</strong>.</li>
+      </ol>
+      <p>Subscribers also get a Manage Subscription link in the app's Settings screen, which goes to the same place. Cancel at least 24 hours before it renews, or before the free trial ends, or you'll be charged for the next period. You keep Pro until the end of the period you've paid for. There's more in <a href="https://support.apple.com/118428">Apple's help article on cancelling subscriptions</a>.</p>
+    </details>
+
+    <details>
+      <summary>How do I get a refund?</summary>
+      <p>Apple takes the payment, so I can't issue refunds myself. You can ask Apple for one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    </details>
+
+    <details>
+      <summary>When does the daily puzzle change?</summary>
+      <p>At midnight UTC. In New York that's 8 pm the evening before (7 pm in winter), and in Tokyo it's 9 am. Everyone gets the same puzzle. Monday, Wednesday and Friday are Medium, Tuesday, Thursday and Saturday are Hard, and Sunday is Expert.</p>
+      <p>If you finish the puzzle on the day, your time goes to the Game Center daily leaderboard and counts towards your streak. Past days from the archive don't. If you used a hint or made a mistake, the app marks your result as assisted.</p>
+    </details>
+
+    <details>
+      <summary>I don't see leaderboards or achievements.</summary>
+      <p>Sign in to Game Center in the Settings app (Settings &rarr; Game Center). You can play without it; you just won't get leaderboards or achievements.</p>
+    </details>
+
+    <details>
+      <summary>Will my progress move to a new device?</summary>
+      <p>Not in this version. Your games, streaks, stats and technique progress are saved only on the device you play on, and there are no accounts to sync them with. If you delete the app, that progress goes with it. Pro is tied to your Apple Account, though, so that part does carry over.</p>
+    </details>
+
+    <details>
+      <summary>Why does the app ask for permission to track?</summary>
+      <p>The free version shows ads from Google AdMob, and iOS makes an app ask before its ads can use your device's advertising identifier to follow you across other companies' apps and websites. If you choose "Ask App Not to Track", you still see ads, but Google won't use that identifier to pick them. You can change your answer any time in Settings &rarr; Privacy &amp; Security &rarr; Tracking. (Pro has no ads, so none of this applies.) The <a href="privacy.html">privacy policy</a> has the details.</p>
+    </details>
+  </div>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> &middot; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a></p>
+    <p>&copy; 2026 Abdelrahman Ibrahim</p>
+  </footer>
+</main>
+</body>
+</html>
